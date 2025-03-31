@@ -36,9 +36,6 @@ def main():
         file_path = os.path.join(path, filename)
         with open(file_path, 'rb') as file:
             bot.send_document(chat_id=chat_id, document=file, caption=comment)
-
-        if os.path.exists(file_path):
-            os.remove(file_path)
     finally:
         for file in path.iterdir():
             os.remove(file)
